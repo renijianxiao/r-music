@@ -1,7 +1,7 @@
 const serviceUrl = 'http://127.0.0.1:1026/' 
 
 let Config = {}
-
+console.log(process)
 if (process.env.NODE_ENV === 'production') {
   Config = {
     loginUrl:'/api/uaa/oauth/token',

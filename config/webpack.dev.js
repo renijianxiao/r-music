@@ -68,6 +68,11 @@ module.exports = function (options){
             new webpack.optimize.CommonsChunkPlugin({
               names: ["common"]
             }),
+            new webpack.DefinePlugin({
+                "process.env": {
+                    NODE_ENV: JSON.stringify('dev')
+                }
+            }),
             // 打开浏览器
       		new OpenBrowserPlugin({ url: 'http://localhost:9999' }),
             /*

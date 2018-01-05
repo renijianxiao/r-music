@@ -37,6 +37,7 @@ class App extends Component {
     const { dispatch,data,scrollTop } = this.props
     if( data.recommendMusics.length > 1){
       // 计算有问题
+        console.log("上次滚动高度:"+scrollTop);
       this.refs.container.scrollTop = scrollTop>0 ? scrollTop + this.refs.container.clientHeight / 2 - 50 : 0
     }else{
       dispatch(homeAPI(data,this.state.page))
@@ -99,7 +100,7 @@ class App extends Component {
 
         <div className="container" onScroll={()=>this.scroll() } ref='container'>
           <Slider data={data.banner} />
-                <RecommendList data={data.recommendMusics} scrollTop={()=>this.scrollTopHandler()}/>
+          <RecommendList data={data.recommendMusics} scrollTop={()=>this.scrollTopHandler()}/>
           
 
         </div>
@@ -112,6 +113,7 @@ class App extends Component {
 }
 
 function map(state) {
+  console.log(state)
   return {
     data: state.home.home,
     scrollTop: state.home.scrollTop,

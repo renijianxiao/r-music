@@ -13,7 +13,7 @@
     "clean:dist": "rimraf dist",
     "clean:dev": "rimraf dev",
     "test": "jest",
-    "dev": "webpack-dev-server --config webpack.config.js --hot",
+    "dev": "env ENV_MODE=dev webpack-dev-server --config webpack.config.js --hot",
     "serve:prod": "webpack-dev-server --config config/webpack.prod.js --hot",
     "start": "node server.js"
   },
